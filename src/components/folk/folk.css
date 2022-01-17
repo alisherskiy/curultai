@@ -1,0 +1,260 @@
+:root {
+    --depth: 500px;
+    --turnLeft: 0.06turn;
+    --turnRight: -0.06turn;
+    --turn: var(--turnRight);
+  }
+  
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .html {
+      position: absolute;
+      top: 60px;
+      width: 1222px;
+      height: 110vh;
+      left: 300px;
+      
+    
+  }
+  
+  .body {
+    width: 1222px;
+    height: 100%;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+    background: #1a1a1a;
+    perspective: 900px;
+    perspective-origin: 50% 35%;
+  } 
+  
+  .building {
+    transform-style: preserve-3d;
+  }
+  
+  .room {
+    position: relative;
+    border: 4vmax solid hsl(0 0% 10%);
+    height: 80vh;
+    width:76vw;
+    scroll-snap-align: center;
+    transform-style: preserve-3d;
+  }
+  
+  .room + .room {
+    border-top: 0;
+  }
+  
+  .room::before,
+  .room::after {
+    content: "" ;
+    position: absolute;
+    height: var(--depth);
+    width: 100%;
+    backface-visibility: hidden;
+  }
+  
+  .room::before {
+    background:
+      radial-gradient(hsl(0 0% 100% / 10%), hsl(0 0% 0% / 10%)),
+      lightgray;
+    transform: rotatex(-90deg) scale(1.001);
+    transform-origin: center top;
+  }
+  
+  .room::after {
+    bottom: 0;
+    background:
+      radial-gradient(hsl(0 0% 100% / 10%), hsl(0 0% 0% / 10%)),
+      url(https://i.ibb.co/tbrV1jC/curltaifolk.jpg) center / cover,
+      sandybrown;
+    transform: rotatex(90deg);
+    transform-origin: center bottom;
+  }
+  
+  .room-walls {
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(to top, hsl(0 0% 90%) 2.5vh, transparent 0),
+      radial-gradient(hsl(0 0% 0% / 30%), hsl(0 0% 0% / 50%)),
+      url(https://i.ibb.co/tbrV1jC/curltaifolk.jpg) center / cover,
+      darkgray;
+    transform: translatez(calc(var(--depth) * -1));
+    transform-style: preserve-3d;
+  }
+  
+  .room-walls::before,
+  .room-walls::after {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: var(--depth);
+  }
+  
+  .room-walls::before {
+    right: 100%;
+    background:
+      linear-gradient(to top, hsl(0 0% 75%) 2.5vh, transparent 0),
+      radial-gradient(hsl(0 0% 100% / 10%), hsl(0 0% 0% / 10%)),
+      url(https://i.ibb.co/WF25yQ6/image.jpg) center / cover,
+      gray;
+    transform: rotatey(90deg);
+    transform-origin: right center;
+  }
+  
+  .room-walls::after {
+    left: 100%;
+    background:
+      linear-gradient(to top, hsl(0 0% 75%) 2.5vh, transparent 0),
+      radial-gradient(hsl(0 0% 100% / 10%), hsl(0 0% 0% / 10%)),
+      url(https://i.ibb.co/k0bQJzR/image.jpg) center / cover,
+      gray;
+    transform: rotatey(-90deg);
+    transform-origin: left center;
+  }
+  
+  .room-content {
+    display: grid;
+    place-content: center;
+    height: 100%;
+    width: 90%;
+    color: rgba(240, 206, 15, 0.87);
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: clamp(2em, 10vmin, 8em);
+    font-weight: 200;
+    text-align: center;
+    text-shadow: 0 5px 10px hsl(0 0% 0% / 20%);
+    transform: translatez55555555555555555555555555rd(calc(var(300px) /-19)) rotatey(var(--turn));
+  }
+  
+  .room:nth-child(odd) > .room-content {
+    --turn: var(--turnLeft);
+  }
+
+  .btn1{
+    width: 250px;
+    height: 38px;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer; 
+    margin-left: 400px;
+    background-color: rgb(58, 143, 212);
+    color: white;
+   }
+   
+   .text{
+     max-width: 1500px;
+     width:100% ;
+     background: #1a1a1a;
+    
+   }
+   
+   .hhh{
+     max-width: 900px;
+     width:100% ;
+     padding-left: 130px;
+     padding-top: 10px;
+     text-align: center;
+     color: #f5f5f5;
+     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+   }
+
+
+   @media all and (max-width:1025px){
+
+    .html{
+      /* margin-top: 10px; */
+      left: 0;
+      width: 1024px;
+    }
+    .building{
+      width: 1024px;
+    }
+    
+    
+    .room{
+    margin: 0s;
+      width: 1023px;
+    }
+    .body{
+      width: 1024px;
+    }
+    .text{
+      width: 1024px;
+    }
+    .hhh{
+      width: 1024px;
+      padding-left: 60px;
+    }
+    .btn1{
+      margin-left: 330px;
+    }
+    
+    }
+
+
+  @media all and (max-width:769px){
+
+    .html{
+      left: 0;
+      width: 768px;
+    }
+    .building{
+      width: 768px;
+    }
+    
+    
+    .room{
+    margin: 0ch;
+      width: 768px;
+    }
+    .body{
+      width: 768px;
+    }
+    .text{
+      width: 768px;
+    }
+    .hhh{
+      width: 760px;
+      padding-left: 30px;
+    }
+    .btn1{
+      margin-left: 230px;
+    }
+    
+    }
+    @media all and (max-width:380px){
+      .html{
+        left: 0;
+        width: 375px;
+      }
+      .building{
+        width: 375px;
+      }
+      
+      
+      .room{
+      margin: 0ch;
+        width: 375px;
+      }
+      .body{
+        width: 375px;
+      }
+      .text{
+        width: 375px;
+      }
+      .hhh{
+        width: 350px;
+        padding-left: 0;
+      }
+      .btn1{
+        margin-left: 10%;
+      }
+      
+    }

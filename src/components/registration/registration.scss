@@ -1,0 +1,79 @@
+.registration {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 70vh;
+
+    .registration__container {
+      max-width: 580px;
+      width: 100%;
+      padding: 72px 106px 91px 93px;
+
+      .registration__title {
+        text-align: center;
+
+        h3 {
+          font-size: 2.25rem;
+          margin-bottom: 8.25pt;
+          color: #333333;;
+          font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        
+        p {
+          color: #666666;
+          font-size: 0.925rem;
+          margin-bottom: 35.25pt;
+          font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  
+          span {
+            color: #089FE0;
+            border-bottom: 1.5px solid #089FE0;
+  
+            a {
+              color: #089FE0;
+            }
+          }
+        }
+  
+      }
+  
+      .form__container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+  
+        .form__btn {
+          background: #089FE0;
+          border-radius: 5px;
+          max-width: 394px;
+          width: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          cursor: pointer;
+          margin-bottom: 16.5pt;
+  
+          button {
+            border: none;
+            background: transparent;
+            padding: 9px 0;
+            color: #fff;
+            font-size: 1rem;
+            padding-left: 160px;
+          }
+  
+          svg {
+            margin-right: 10.5pt;
+          }
+        }
+      }
+  
+      .checkText {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        color: #666666;
+        font-size: 1rem;
+        margin-bottom: 35.25pt;
+        padding-left: 5pt;
+    }
+    }
+  }
